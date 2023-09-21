@@ -299,9 +299,18 @@ footer p {
         padding: 20px 5%;
     }
 
-    .project-box {
-        flex: 1 1 calc(50% - 10px);
+    .heading-container {
+        flex: 1 1 100%;
     }
+
+    .about-box {
+        flex: 1 1 100%;
+    }
+
+    .project-box {
+        flex: 1 1 100%;
+    }
+
 }
 
 @keyframes scrollLogos {
