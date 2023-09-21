@@ -1,0 +1,302 @@
+/* Variables */
+:root {
+    --main-color: #262624;
+    --secondary-color: #E3E3E3;
+    --accent-color: #B8B5AB;
+    --highlight-color: #A759FF;
+    --background-white: #ffffff;
+    --font-family: 'Commuters Sans', sans-serif;
+}
+
+/* Base Styles and Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--highlight-color);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--main-color);
+}
+
+header img {
+    height: 30px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    overflow: hidden;
+}
+
+#hero .developer,
+#hero .designer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+#hero .designer {
+    opacity: 1;
+    z-index: 1;  
+}
+
+#hero .developer {
+    opacity: 1;
+    z-index: 2;
+}
+
+#contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contact li {
+    margin-bottom: 10px;
+}
+
+/* About Section */
+#about-varnas {
+    padding: 0px 5%;
+}
+
+.about-varnas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.about-box {
+    flex: 1 1 calc(50% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    background-color: var(--background-white);
+}
+
+.about-box h3,
+.about-box p {
+    padding: 8px;
+}
+
+/* Latest Projects Section */
+#latest-projects {
+    padding: 40px 5%;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.project-box {
+    flex: 1 1 calc(33.333% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    background-color: var(--background-white);
+}
+
+.project-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+}
+
+.project-box h3,
+.project-box p {
+    padding: 8px;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+}
+
+/* Customers Section */
+#customers {
+    position: relative;
+    padding: 20px 5%;
+    background-color: var(--background-white);
+    overflow: hidden; /* Hide the overflow so we don't see logos outside the slider area */
+}
+
+.heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the entire content */
+    text-align: center;
+    padding: 20px;
+}
+
+.heading-container h2 {
+    margin: 0 5px; /* Adds a little gap between the text and the lines */
+}
+
+.heading-container::before,
+.heading-container::after {
+    content: ''; /* Necessary for pseudo-elements */
+    position: absolute;
+    top: 50%; /* Position in the center vertically */
+    width: 50%; /* Half the width of the container */
+    height: 1px; /* Adjust thickness of the line */
+    background-color: #333; /* Adjust the color */
+}
+
+.heading-container::before {
+    left: 0; /* Positioned to the left */
+    margin-right: 10px; /* Adds a small gap between the text and the line */
+    transform: translateX(-100%); /* Moves it completely to the left */
+}
+
+.heading-container::after {
+    right: 0; /* Positioned to the right */
+    margin-left: 10px; /* Adds a small gap between the text and the line */
+    transform: translateX(100%); /* Moves it completely to the right */
+}
+
+#customers h2 {
+    
+    padding: 0 10px; /* Adds some padding so the background color covers a bit of the line near the text */
+   
+}
+
+
+.heading-container .line {
+    flex-grow: 0; /* Don't let the line take all available space */
+    flex-basis: 200px; /* This will be the default width of the line */
+    height: 1px; /* Adjust thickness of the line */
+    background-color: #333; /* Adjust the color */
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Start the logos from the left side */
+    animation: scrollLogos 30s linear infinite; /* Apply the scrolling animation */
+    width: calc(200% - 20px); /* Double the width to have a seamless loop */
+}
+
+.slider::-webkit-scrollbar {
+    display: none; /* hide scrollbar for Chrome, Safari, Edge */
+}
+
+.slide {
+    width: calc(16.666% - 20px); /* Divide by 6 since there are 6 logos */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.slide img {
+    max-width: 80px;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Social Media Links */
+.social-links a img {
+    margin: 0 5px;
+    height: 30px; 
+    width: auto;
+    transition: filter 0.3s ease;
+}
+
+.social-links a:hover img {
+    filter: brightness(1.2);
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+
+    nav ul, footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    header, footer {
+        padding: 20px 5%;
+    }
+
+    .project-box {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
