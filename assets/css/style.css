@@ -64,6 +64,27 @@ nav ul li a {
 }
 
 /* Hero Section */
+
+.profile-box {
+    max-width: 1000px;
+    margin: auto;
+    flex: 1 1 calc(50% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    background-color: var(--background-white);
+}
+
+.profile-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+}
+
 .hero {
     background-color: red;
     padding: 2rem 2rem 1rem;  /* Adjusted bottom padding */
@@ -144,7 +165,7 @@ nav ul li a {
 
 /* Latest Projects Section */
 #latest-projects {
-    padding: 40px 5%;
+    padding: 0 5%;
 }
 
 .project-grid {
@@ -287,6 +308,13 @@ footer p {
 }
 
 /* Responsive Media Queries */
+@media screen and (max-width: 1000px) {
+    .profile-box {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     nav ul, footer {
